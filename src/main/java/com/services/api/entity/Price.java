@@ -1,29 +1,31 @@
 package com.services.api.entity;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.io.Serializable;
+import java.sql.Timestamp;
 
-@Table(name = "prices")
 @Entity
 @Setter
 @Getter
-@ToString
-public class Price {
+@EqualsAndHashCode
+public class Price implements Serializable, Comparable<Price> {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer price_id;
+    @EmbeddedId
+    private Product product;
     private Integer brand_id;
-    private LocalDateTime start_date;
-    private LocalDateTime end_date;
-    private Integer product_id;
+    private Timestamp start_date;
+    private Timestamp end_date;
     private Integer priority;
     private Float price;
     @Column(length = 3)
     private String curr;
 
+    @Override
+    public int compareTo(Price other) {
+        return this.priority.compareTo(other.getPriority());
+    }
 }
