@@ -11,7 +11,7 @@ public class PriceInput implements Serializable {
 
     protected Integer product_id;
     protected Integer brand_id;
-    protected String start_date;
+    protected String input_date;
     protected String end_date;
 
 }

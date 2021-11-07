@@ -19,7 +19,7 @@ public class PriceController {
     public ResponseEntity<PriceOutPut> getAllCurrency(@PathParam(value = "product_id") Integer product_id,
                                                       @PathParam(value = "brand_id") Integer brand_id,
                                                       @PathParam(value = "start_date") String start_date){
-        return ResponseEntity.ok(priceService.find(product_id, brand_id, start_date));
+        return ResponseEntity.ok(priceService.findPrice(product_id, brand_id, start_date));
     }
 
 }

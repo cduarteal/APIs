@@ -18,7 +18,7 @@ public class PriceService {
     private final PriceRepository  priceRepository;
 
     @Transactional(readOnly = true)
-    public PriceOutPut find(Integer product_id, Integer brand_id, String start_date){
+    public PriceOutPut findPrice(Integer product_id, Integer brand_id, String start_date){
         Price price = priceRepository
                 .getPriceFinal(product_id, brand_id, Timestamp.valueOf(start_date))
                 .max(Comparator.comparing(p -> p))
