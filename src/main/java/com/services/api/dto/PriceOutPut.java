@@ -20,7 +20,6 @@ public class PriceOutPut extends PriceInput implements Serializable {
         super();
         super.input_date = start_date;
         super.brand_id = price.getBrand_id();
-        super.end_date = price.getEnd_date().toString();
         Product product = price.getProduct();
         super.product_id = product.getProduct_id();
         this.rate_applied = product.getPrice_list();

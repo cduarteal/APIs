@@ -7,7 +7,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 @Entity
 @Setter
@@ -18,8 +17,8 @@ public class Price implements Serializable, Comparable<Price> {
     @EmbeddedId
     private Product product;
     private Integer brand_id;
-    private LocalDateTime start_date;
-    private LocalDateTime end_date;
+    private Timestamp start_date;
+    private Timestamp end_date;
     private Integer priority;
     private Float price;
     @Column(length = 3)

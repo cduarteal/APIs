@@ -7,8 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.sql.Timestamp;
 import java.util.Comparator;
 import java.util.NoSuchElementException;
 
@@ -20,9 +19,8 @@ public class PriceService {
 
     @Transactional(readOnly = true)
     public PriceOutPut findPrice(Integer product_id, Integer brand_id, String start_date){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         Price price = priceRepository
-                .getPriceFinal(product_id, brand_id, LocalDateTime.parse(start_date, formatter))
+                .getPriceFinal(product_id, brand_id, Timestamp.valueOf(start_date))
                 .max(Comparator.comparing(p -> p))
                 .orElseThrow(NoSuchElementException::new);
 
