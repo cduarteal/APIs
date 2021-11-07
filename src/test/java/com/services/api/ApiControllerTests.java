@@ -26,8 +26,8 @@ class ApiControllerTests {
 	@Test
 	void test_1(){
 		PriceInput priceInput = new PriceInput();
-		priceInput.setInput_date("2020-06-14 10:00:00.000");
-		priceInput.setBrand_id(1);
+		priceInput.setInput_date("2020-06-14 10:00:00");
+		priceInput.setBrand_id(2);
 		priceInput.setProduct_id(35455);
 
 		ResponseEntity<PriceOutPut> response = this.componentBuild(priceInput);
@@ -42,7 +42,7 @@ class ApiControllerTests {
 	@Test
 	void test_2(){
 		PriceInput priceInput = new PriceInput();
-		priceInput.setInput_date("2020-06-14 16:00:00.000");
+		priceInput.setInput_date("2020-06-14 16:00:00");
 		priceInput.setBrand_id(1);
 		priceInput.setProduct_id(35455);
 
@@ -57,10 +57,9 @@ class ApiControllerTests {
 	@Test
 	void test_3(){
 		PriceInput priceInput = new PriceInput();
-		priceInput.setInput_date("2020-06-14 21:00:00.000");
+		priceInput.setInput_date("2020-06-14 21:00:00");
 		priceInput.setBrand_id(1);
 		priceInput.setProduct_id(35455);
-
 		ResponseEntity<PriceOutPut> response = this.componentBuild(priceInput);
 
 		PriceOutPut priceOutPut = response.getBody();
@@ -72,7 +71,7 @@ class ApiControllerTests {
 	@Test
 	void test_4(){
 		PriceInput priceInput = new PriceInput();
-		priceInput.setInput_date("2020-06-15 10:00:00.000");
+		priceInput.setInput_date("2020-06-15 10:00:00");
 		priceInput.setBrand_id(1);
 		priceInput.setProduct_id(35455);
 
@@ -87,7 +86,7 @@ class ApiControllerTests {
 	@Test
 	void test_5(){
 		PriceInput priceInput = new PriceInput();
-		priceInput.setInput_date("2020-06-16 21:00:00.000");
+		priceInput.setInput_date("2020-06-16 21:00:00");
 		priceInput.setBrand_id(1);
 		priceInput.setProduct_id(35455);
 
